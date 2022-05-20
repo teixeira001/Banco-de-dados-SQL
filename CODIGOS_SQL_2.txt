@@ -1,0 +1,66 @@
+
+#criando obanco de dados bulding.
+$create database db_building;
+
+#Usando o banco de dados db_building.
+$use db_building;
+
+#CRIANDO TABELAS
+$create table PREDIOS (codigo int auto_increment, nome varchar(50), registro_local char(20), cep char (10), primary key(codigo));
+
+$create table GARAGENS (numero int auto_increment, predio varchar(40), coberta char(6), primary key(numero));
+
+$create table TIPOS (id int auto_increment, tipos char(50), primary key(id));
+
+$create table SALAS (id int auto_increment, predio varchar(40), nome char(50), metros char(6), primary key(id));
+
+#INSERINDO DADOS NAS TABELAS
+
+#inserindo dados na tabela PREDIOS.
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (1, 'Palácio do planalto', 45, 125438489);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (2, 'Palácio da Alvorada', 46, 125438489);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (3, 'Palácio do Buriti', 47, 125486492);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (4, 'Palacio do Catetinho', 48, 125473964);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (5, 'Palácio do Congresso nacional', 49, 125456824);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (6, 'Palácio Itamaraty', 50, 125485273);
+$insert into PREDIOS (codigo, nome, registro_local, cep) values (7, 'Palácio do jaburu', 51, 125496382);
+
+#inserindo dados na tcd:abela GARAGENS.
+$insert into GARAGENS (numero, predio, coberta) values(1, 'Palácio do Planalto', 'sim');
+$insert into GARAGENS (numero, predio, coberta) values(2, 'Palácio da alvorada', 'não');
+$insert into GARAGENS (numero, predio, coberta) values(3, 'Palácio do Buriti', 'sim');
+$insert into GARAGENS (numero, predio, coberta) values(4, 'Palácio do Catetinho', 'sim');
+$insert into GARAGENS (numero, predio, coberta) values(5, 'Palácio do Congresso Nacional', 'não');
+$insert into GARAGENS (numero, predio, coberta) values(6, 'Palácio do Itamaray', 'sim');
+$insert into GARAGENS (numero, predio, coberta) values(7, 'Palácio do jaburu', 'não');
+
+#inserindo dados na tabela TIPOS.
+$insert into TIPOS (id, tipos) values (1, 2);
+$insert into TIPOS (id, tipos) values (2, 3);
+$insert into TIPOS (id, tipos) values (3, 2);
+$insert into TIPOS (id, tipos) values (4, 1);
+$insert into TIPOS (id, tipos) values (5, 3);
+$insert into TIPOS (id, tipos) values (6, 3);
+$insert into TIPOS (id, tipos) values (7, 1);
+
+#inserindo dados na tabela SALAS.
+$insert into SALAS (id, predio, nome, metros) values (1, 'Palácio do Planalto', 'Sala_onze', 12);
+$insert into SALAS (id, predio, nome, metros) values (2, 'Palácio da alvorada', 'Sala_treze', 14);
+$insert into SALAS (id, predio, nome, metros) values (3, 'Palácio do Buriti', 'Sala_quartoze', 14);
+$insert into SALAS (id, predio, nome, metros) values (4, 'Palácio do Catetinho', 'Sala_quize', 12);
+$insert into SALAS (id, predio, nome, metros) values (5, 'Palácio do Congresso Nacional', 'Sala_Dezeseis', 20);
+$insert into SALAS (id, predio, nome, metros) values (6, 'Palácio do Itamaray', 'Sala_dezessete', 18);
+$insert into SALAS (id, predio, nome, metros) values (7, 'Palácio do jaburu', 'Sala_dezoito', 10);
+
+TENHO QUE CRIAR UMA TABELA QUE SE RELACIONE COM A TABELA (TIPOS) E TIPOS VAI SER PK, UMA TABELA PARA ESPECIFICAR O TIPO DE AUTOMOVEIS
+
+
+
+
+#criando a tabela VEICULOS e inserindo dados.
+$create table TIPO_VEICULOS (id int primary key auto_increment,tipos char(50), veiculos varchar(30));
+
+TENHO QUE INSERIR OS DADOS, ESTÁ SEM
+$insert into TIPO_VEICULOS values (1, 1, 'carro');
+$insert into TIPO_VEICULOS values (2, 2, 'moto');
+$insert into TIPO_VEICULOS values (3, 3, 'bicicleta');
