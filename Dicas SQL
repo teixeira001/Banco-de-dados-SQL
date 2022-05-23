@@ -1,2 +1,16 @@
 selecionando a media 
 select predio, avg(metros) as media from salas group by predio order by media desc;
+                              EXISTS
+SELECT EXISTS (select tipo from tipos where tipo = "RG") as pesquisa;
+SELECT NO EXISTS (select tipo from tipos where tipo = "RG") as pesquisa;
+SELECT numero,
+                               CASE
+SELECT garagens, predios 
+CASE
+      WHEIN tipo = 1 THEN 'MOTO'
+      WHEIN tipo = 2 THEN 'CARRO'
+      ELSE 'DESCONHECIDO'
+ END AS vaga
+ FROM GARAGENS
+ 
+ 
