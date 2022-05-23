@@ -1,0 +1,2 @@
+selecionando a media 
+select predio, avg(metros) as media from salas group by predio order by media desc;
