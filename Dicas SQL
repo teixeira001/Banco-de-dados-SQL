@@ -1,3 +1,8 @@
+ATV H select cep from predios where nome like'p%';
+ATV INDEFINIDA  select * from garagens where predio in (select codigo from predios where nome like  "%K%" or nome like "%z%");
+
+ATV J
+ATV K
 selecionando a media 
 select predio, avg(metros) as media from salas group by predio order by media desc;
                               EXISTS
@@ -12,5 +17,22 @@ CASE
       ELSE 'DESCONHECIDO'
  END AS vaga
  FROM GARAGENS
- 
- 
+        
+        USANDO O ((OR))
+  #SELECIONANDO 2 CÓDIGOS DISTINTOS NA TABELA
+$select * from predios where codigo =1 or codigo=3;
+       
+       USANDO O ((IN))
+        selecionando o código quando for 2,3 ou 5.
+       select * from predios where codigo in (2,3,5);
+       
+       USANDO O ((like %))
+      #selecionando tuplas por letra inicial
+      $select cep from predios where nome like'p%';
+      
+      select nome from nomes where nome like '%a' = Qualquer coisa que termina com A
+      select nome from nomes where nome like 'a%' começa com a e termina com qualquer coisa
+      select nome from nomes where nome like '_a%'= A segunda letra tem que ser A
+      select nome from nomes where nome like '_c%u'= começa com C e termina com U
+      
+      
