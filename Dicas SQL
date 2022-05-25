@@ -34,5 +34,51 @@ $select * from predios where codigo =1 or codigo=3;
       select nome from nomes where nome like 'a%' começa com a e termina com qualquer coisa
       select nome from nomes where nome like '_a%'= A segunda letra tem que ser A
       select nome from nomes where nome like '_c%u'= começa com C e termina com U
-      
-      
+      --------------------------------------------------------------------------------
+      aula do dia 25/05/22
+      usando codigo para somar e multiplicar codigos da tabela AUTOMATICAMENTE
++------+------+------+------+
+| vara | varb | soma | mult |
++------+------+------+------+
+|    2 |    4 | NULL | NULL |
+|    6 |    3 | NULL | NULL |
+|   -4 |    3 | NULL | NULL |
+|    1 |   -9 | NULL | NULL |
+|   -1 |   -2 | NULL | NULL |
++------+------+------+------+
+RESPOSTA:
+ update numeros set soma  = vara + varb, mult=vara*varb;
+    +------+------+------+------+
+| vara | varb | soma | mult |
++------+------+------+------+
+|    2 |    4 |    6 |    8 |
+|    6 |    3 |    9 |   18 |
+|   -4 |    3 |   -1 |  -12 |
+|    1 |   -9 |   -8 |   -9 |
+|   -1 |   -2 |   -3 |    2 |
++------+------+------+------+
+------------------------------------------------------------
+
++------+------+------+------+  
+|    2 |    4 |    6 |    8 |
+|    6 |    3 |    9 |   18 |
+|   -4 |    3 |   -1 |  -12 |
+|    1 |   -9 |   -8 |   -9 |
+|   -1 |   -2 |   -3 |    2 |
++------+------+------+------+
++------+-------+
+| i    | valor |
++------+-------+
+|    1 |     5 |
+|    1 |     6 |
+|    2 |     2 |
+|    2 |     6 |
+|    3 |     3 |
+|    3 |     7 |
++------+-------+
+1.Exiba todas Numeros.soma que equivalem a alguma valor de Referencias.valor;
+select soma from numeros where soma in (select valor from referencias);
+2.Exiba todas Numeros.mult que forem maiores que o maior valor de referencias.valor;
+select mult from numeros where mult > (select max(valor) from referencias);
+
+
