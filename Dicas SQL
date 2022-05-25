@@ -80,5 +80,5 @@ RESPOSTA:
 select soma from numeros where soma in (select valor from referencias);
 2.Exiba todas Numeros.mult que forem maiores que o maior valor de referencias.valor;
 select mult from numeros where mult > (select max(valor) from referencias);
-
+..
 
