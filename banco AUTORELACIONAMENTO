@@ -1,0 +1,13 @@
+CRIANDO O BANCO AUTORELACIONAMENTO
+CREATE TABLE autorelacionamento
+USE autorelacionamento;
+##criando as tabelas
+$create table funcionarios (matricula int auto_increment, chefe varchar (50), nome varchar (50), nascimento date, cpf varchar(11), primary key(matricula));
+$create table cargos(id int auto_increment, cargo varchar(50), primary key(id));
+$create table funcoes(id int auto_increment, funcao varchar(25), primary key(id));
+$create table desempenha(id int auto_increment, funcao varchar(30), funcionario varchar(30),  primary key(id));
+$create table atividades(codigo int auto_increment, nome varchar(50), data date,  primary key(codigo));
+$create table cnhs( id int auto_increment, matricula int, cnh varchar (15), primary key(id));
+$create table fins(id int auto_increment, atividade varchar(30), fim date time, primary key(id));
+$create table envolve(id int auto_increment, funcionario varchar(30), atividade varchar(30), primary key(id));
+$create table locais(id int auto_increment, local varchar(50), primary key(id));
