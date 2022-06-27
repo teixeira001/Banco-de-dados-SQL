@@ -1,0 +1,74 @@
+	create table valores(numeros int);
+	insert into valores(numeros) values (5, 6, -9, 8, -2, 7, -4, 11); 
+---------------------------------------------------
+
+	1.1. Exiba o maior deles
+DELIMITER $$
+
+ CREATE FUNCTION maior()
+ RETURNS INT DETERMINISTIC
+	BEGIN
+	DECLARE VAL INT; 
+		SELECT MAX(numeros)INTO VAL FROM atividades.valores;
+	RETURN VAL;
+	
+	END $$
+
+
+DELIMITER ;
+
+SELECT maior();
+
+---------------------------------------------------
+
+1.2. Exiba o menor deles.
+
+DELIMITER $$
+
+ CREATE FUNCTION menor()
+ RETURNS INT DETERMINISTIC
+	BEGIN
+	DECLARE VAL INT; 
+		SELECT MIN(numeros)INTO VAL FROM atividades.valores;
+	RETURN VAL;
+	
+	END $$
+
+
+DELIMITER ;
+
+SELECT menor();
+
+---------------------------------------------------
+-----------NÃO TERMINADA------------
+3.1. Exiba a quantidade de valores negativos
+DELIMITER $$
+	CREATE FUNCTION val_Negativo()
+	RETURNS INT DETERMINISTIC
+		BEGIN
+		DECLARE VAL INT; 
+			
+			SELECT COUNT(numeros) INTO VAL FROM atividades.valores WHERE numeros < 0;
+		RETURN VAL;
+
+	END $$
+DELIMITER ;
+SELECT val_Negativo();
+
+---------------------------------------------------
+
+
+
+3.2. Exiba a quantidade de valores positivos.
+DELIMITER $$
+	CREATE FUNCTION val_Positivo()
+	RETURNS INT DETERMINISTIC
+		BEGIN
+		DECLARE VAL INT; 
+			
+			SELECT COUNT(numeros) INTO VAL FROM atividades.valores WHERE MOD (numeros, 2) =0;
+		RETURN VAL;
+
+	END $$
+DELIMITER ;
+SELECT val_Positivo();
